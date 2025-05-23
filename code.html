@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Missão sobre Inteligência Artificial</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+  body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #eee;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  header {
+    background-color: rgba(28, 45, 68, 0.9);
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  header h1 {
+    margin: 0 0 0.5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00e0ff;
+    text-shadow: 0 0 10px #00e0ff;
+  }
+  header p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    color: #a3dbee;
+  }
+  main {
+    flex-grow: 1;
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem auto 3rem;
+    background-color: rgba(30, 40, 60, 0.9);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 0 20px rgba(0, 224, 255, 0.4);
+  }
+  section {
+    margin-bottom: 2rem;
+  }
+  h2 {
+    color: #00cfff;
+    text-shadow: 0 0 5px #00cfff;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #00cfff;
+    padding-bottom: 0.25rem;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 1.1rem;
+    color: #d0eaff;
+  }
+  .quiz-question {
+    margin-bottom: 1.5rem;
+  }
+  .question-text {
+    font-weight: 600;
+    font-size: 1.15rem;
+    margin-bottom: 0.75rem;
+  }
+  .options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .options li {
+    margin-bottom: 0.75rem;
+  }
+  button.option-button {
+    width: 100%;
+    background-color: #004451;
+    border: 2px solid #00e0ff;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: #00e0ff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  button.option-button:hover {
+    background-color: #00e0ff;
+    color: #004451;
+  }
+  button.option-button.correct {
+    background-color: #20c997;
+    color: #0a2e24;
+    border-color: #20c997;
+    cursor: default;
+  }
+  button.option-button.incorrect {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+    cursor: default;
+  }
+  #quiz-result {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #00e0ff;
+    text-align: center;
+    text-shadow: 0 0 8px #00e0ff;
+  }
+  footer {
+    background-color: rgba(28, 45, 68, 0.9);
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+    color: #90d3ff;
+    font-size: 0.9rem;
+    box-shadow: 0 -3px 6px rgba(0,0,0,0.3);
+  }
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 2rem;
+    }
+    main {
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>Missão: Conhecer a Inteligência Artificial</h1>
+    <p>Explore o mundo da Inteligência Artificial, entenda seus impactos e teste seus conhecimentos.</p>
+  </header>
+  <main>
+    <section id="info">
+      <h2>O que é Inteligência Artificial?</h2>
+      <p>A Inteligência Artificial (IA) refere-se à capacidade de máquinas e sistemas computacionais para realizar tarefas que normalmente requerem inteligência humana, como reconhecimento de fala, aprendizado, planejamento e tomada de decisão.</p>
+    </section>
+    <section id="impact">
+      <h2>Impactos da IA na Sociedade</h2>
+      <p>A IA tem o potencial de transformar diversos setores, como saúde, transporte, educação e indústria, tornando processos mais eficientes e personalizados. Contudo, também levanta questões éticas e de privacidade que precisam ser cuidadosamente consideradas.</p>
+    </section>
+    <section id="quiz">
+      <h2>Teste seus Conhecimentos sobre IA</h2>
+      <div class="quiz-question" data-correct="B">
+        <div class="question-text">1. O que é aprendizado de máquina?</div>
+        <ul class="options">
+          <li><button class="option-button" data-option="A">Um método de programação baseado em regras fixas.</button></li>
+          <li><button class="option-button" data-option="B">Uma técnica onde sistemas aprendem e melhoram a partir de dados.</button></li>
+          <li><button class="option-button" data-option="C">Um sistema que executa tarefas manualmente.</button></li>
+        </ul>
+      </div>
+      <div class="quiz-question" data-correct="C">
+        <div class="question-text">2. Qual das opções é uma aplicação comum da IA?</div>
+        <ul class="options">
+          <li><button class="option-button" data-option="A">Conserto manual de equipamentos.</button></li>
+          <li><button class="option-button" data-option="B">Jardinagem automática com robôs humanos.</button></li>
+          <li><button class="option-button" data-option="C">Assistentes virtuais como Siri e Alexa.</button></li>
+        </ul>
+      </div>
+      <div class="quiz-question" data-correct="A">
+        <div class="question-text">3. O que significa 'redes neurais' em IA?</div>
+        <ul class="options">
+          <li><button class="option-button" data-option="A">Modelos computacionais inspirados no cérebro humano.</button></li>
+          <li><button class="option-button" data-option="B">Redes de computadores conectadas à internet.</button></li>
+          <li><button class="option-button" data-option="C">Um tipo de hardware para armazenamento de dados.</button></li>
+        </ul>
+      </div>
+      <div id="quiz-result"></div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Missão Inteligência Artificial - Aprendizado e Conhecimento
+  </footer>
+<script>
+  const quizQuestions = document.querySelectorAll('.quiz-question');
+  let score = 0;
+  let answeredCount = 0;
+  quizQuestions.forEach(questionEl => {
+    const buttons = questionEl.querySelectorAll('button.option-button');
+    const correct = questionEl.getAttribute('data-correct');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        if (questionEl.classList.contains('answered')) {
+          return;
+        }
+        questionEl.classList.add('answered');
+        answeredCount++;
+        const selected = button.getAttribute('data-option');
+        if (selected === correct) {
+          button.classList.add('correct');
+          score++;
+        } else {
+          button.classList.add('incorrect');
+          // Mark the correct button as well
+          buttons.forEach(b => {
+            if (b.getAttribute('data-option') === correct) {
+              b.classList.add('correct');
+            }
+          });
+        }
+        // Disable all buttons
+        buttons.forEach(b => b.disabled = true);
+        if (answeredCount === quizQuestions.length) {
+          const resultEl = document.getElementById('quiz-result');
+          resultEl.textContent = `Você acertou ${score} de ${quizQuestions.length} perguntas. Parabéns!`;
+        }
+      });
+    });
+  });
+</script>
+</body>
+</html>
+
